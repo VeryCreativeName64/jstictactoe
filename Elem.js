@@ -9,8 +9,10 @@ export default class Elem {
     this.elem = document.querySelector(".elem:last-child");
     /* kattintás esemény, ahol kiváltódik a saját eseményünk, */
     this.elem.addEventListener("click", () => {
-        const esemeny = new CustomEvent("kivalaszt", { detail: this.#index });
-        window.dispatchEvent(esemeny);
+        if (this.#adat===" "){
+            const esemeny = new CustomEvent("kivalaszt", { detail: this.#index });
+            window.dispatchEvent(esemeny);
+        }
     });
   }
   megjelenit(){
